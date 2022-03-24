@@ -7,7 +7,9 @@ function Layout({ children }: LayoutProps): JSX.Element {
   return (
     <>
       <Header />
-      {children}
+      <main>
+        {children}
+      </main>
     </>
   );
 }

@@ -1,0 +1,3 @@
+export const FILTER_FLYERS = 'FLYERS/FILTER_FLYERS';
+export const SHOW_LOADER = 'APP/SHOW_LOADER';
+export const HIDE_LOADER = 'APP/HIDE_LOADER';

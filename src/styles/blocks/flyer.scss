@@ -1,0 +1,74 @@
+@import 'styles/common/variables';
+
+.flyers {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 300px);
+  column-gap: 20px;
+
+  @media (max-width: $tablet-width) {
+    grid-template-columns: repeat(auto-fill, 200px);
+    column-gap: 10px;
+  }
+}
+
+.flyer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  border: 2px solid $border-color;
+  border-radius: 8px;
+  overflow: hidden;
+
+  @media (max-width: $tablet-width) {
+    margin-top: 10px;
+  }
+
+  &__retailer,
+  &__title,
+  &__category {
+    margin-bottom: 5px;
+  }
+
+  &__title {
+    width: 260px;
+    font-size: $secondary-title-size;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space: nowrap;
+  }
+
+  &__image {
+    height: 280px;
+    object-fit: cover;
+    object-position: top;
+
+    @media (max-width: $tablet-width) {
+      height: 200px;
+    }
+  }
+
+  &__info {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  &__button {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: $disabled-icon-color;
+    transition: $main-transition;
+
+    &:hover {
+      color: $project-color;
+      transition: $main-transition;
+    }
+  }
+
+  &__heartIcon {
+    font-size: 1.375rem;
+  }
+}
