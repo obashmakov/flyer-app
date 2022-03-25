@@ -1,0 +1,16 @@
+@import 'styles/common/variables';
+@import 'styles/common/mixins';
+
+.clearButton {
+  width: 20px;
+  height: 20px;
+  @include flex-row-center;
+  border-radius: 50%;
+  background-color: $disabled-icon-color;
+  margin-right: 10px;
+
+  &__icon {
+    font-size: 10px;
+    color: $input-background;
+  }
+}
