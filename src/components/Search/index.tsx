@@ -1,33 +1,57 @@
-import ClearButton from 'components/Buttons/ClearButton';
 import React, { useState } from 'react';
+import cx from 'classnames';
+import { useDispatch, useSelector } from 'react-redux';
+import { searchFlyers } from 'redux/actions';
+import ClearButton from 'components/Buttons/ClearButton';
+
 import 'styles/blocks/search.scss';
 
+import { FlyerProps } from 'types/reducers.interface';
+import SearchResults from './SearchResults';
+
+interface StateProps { flyers: { data: FlyerProps[], search: string } }
+
 function Search(): JSX.Element {
+  const dispatch = useDispatch();
+  const searchResults = useSelector((state: StateProps) => state.flyers.data.filter(
+    (flyer) => flyer.title.toLocaleLowerCase().includes(state.flyers.search),
+  ));
+
   const [input, setInput] = useState('');
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: { target: { value: string } }) => {
     const { value } = e.target;
     setInput(value);
+    dispatch(searchFlyers(value));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
   };
 
   return (
-    <form className="search" onSubmit={handleSubmit}>
-      <label className="search__label" htmlFor="search">
-        <i className="fa-solid fa-magnifying-glass search__icon" />
-        <input
-          className="search__input"
-          id="search"
-          type="text"
-          onChange={handleChange}
-          value={input}
-        />
-        {input && <ClearButton setInput={setInput} />}
-      </label>
-    </form>
+    <div className="searchContainer">
+      <form className="search" onSubmit={handleSubmit}>
+        <label
+          className={cx({
+            search__label: true,
+            'search__label--isOpen': input,
+          })}
+          htmlFor="search"
+        >
+          <i className="fa-solid fa-magnifying-glass search__icon" />
+          <input
+            className="search__input"
+            id="search"
+            type="text"
+            onChange={handleChange}
+            value={input}
+          />
+          {input && <ClearButton setInput={setInput} />}
+        </label>
+      </form>
+      {input && <SearchResults flyers={searchResults} />}
+    </div>
   );
 }
 
