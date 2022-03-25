@@ -1,13 +1,19 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable arrow-body-style */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import flyers from 'api/flyers.json';
-import { FlyersProps } from 'types/reducers.interface';
+import { data } from 'api/data';
+import { FILTER_FLYERS } from 'redux/types';
+import { FlyerProps, ActionProps } from 'types/reducers.interface';
+
+interface FlyersProps {
+  data: FlyerProps[];
+}
 
 const initialState: FlyersProps = {
-  data: flyers.data,
+  data: data.filter((flyer) => flyer.is_published),
 };
 
-export const flyersReducer = (state = initialState, action: any) => {
-  return state;
+export const flyersReducer = (state = initialState, action: ActionProps) => {
+  switch (action.type) {
+    case FILTER_FLYERS:
+      return { ...state, flyers: action.payload };
+    default: return state;
+  }
 };
