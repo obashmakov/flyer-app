@@ -7,6 +7,8 @@ export interface FlyerProps {
   is_published: number;
   asset: string;
   category_id: number;
+  category_name?: string;
+  retailer_name?: string;
 }
 
 export type LikeButtonProps = Pick<FlyerProps, 'id' | 'title'>

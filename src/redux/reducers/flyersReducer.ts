@@ -1,4 +1,4 @@
-import flyers from 'api/flyers.json';
+import { data } from 'api/data';
 import { FILTER_FLYERS } from 'redux/types';
 import { FlyerProps, ActionProps } from 'types/reducers.interface';
 
@@ -7,7 +7,7 @@ interface FlyersProps {
 }
 
 const initialState: FlyersProps = {
-  data: flyers.data.filter((flyer) => flyer.is_published),
+  data: data.filter((flyer) => flyer.is_published),
 };
 
 export const flyersReducer = (state = initialState, action: ActionProps) => {
