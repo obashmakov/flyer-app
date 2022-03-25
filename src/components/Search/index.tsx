@@ -18,10 +18,12 @@ function Search(): JSX.Element {
   ));
 
   const [input, setInput] = useState('');
+  const [areResultsOpen, setAreResultsOpen] = useState(false);
 
   const handleChange = (e: { target: { value: string } }) => {
     const { value } = e.target;
     setInput(value);
+    setAreResultsOpen(true);
     dispatch(searchFlyers(value));
   };
 
@@ -35,7 +37,7 @@ function Search(): JSX.Element {
         <label
           className={cx({
             search__label: true,
-            'search__label--isOpen': input,
+            'search__label--isOpen': areResultsOpen,
           })}
           htmlFor="search"
         >
@@ -50,7 +52,13 @@ function Search(): JSX.Element {
           {input && <ClearButton setInput={setInput} />}
         </label>
       </form>
-      {input && <SearchResults flyers={searchResults} />}
+      {areResultsOpen && (
+        <SearchResults
+          flyers={searchResults}
+          setInput={setInput}
+          setAreResultsOpen={setAreResultsOpen}
+        />
+      )}
     </div>
   );
 }
