@@ -7,7 +7,6 @@ import { FlyerProps } from 'types/reducers.interface';
 interface StateProps { flyers: { data: FlyerProps[] } }
 
 function Flyers(): JSX.Element {
-  // const dispatch = useDispatch();
   const flyers = useSelector((state: StateProps) => state.flyers.data);
 
   return (
