@@ -13,6 +13,15 @@ export interface FlyerProps {
 
 export type LikeButtonProps = Pick<FlyerProps, 'id' | 'title'>
 
+export interface FilterProps {
+  isOpen: boolean;
+  name: string;
+  filters: {
+    id: number;
+    name: string;
+  }[];
+}
+
 export interface ActionProps {
   type: string;
   payload: FlyerProps[];

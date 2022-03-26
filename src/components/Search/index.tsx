@@ -46,6 +46,7 @@ function Search(): JSX.Element {
             className="search__input"
             id="search"
             type="text"
+            placeholder="Search a Flyer"
             onChange={handleChange}
             value={input}
           />

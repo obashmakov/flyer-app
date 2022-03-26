@@ -12,3 +12,21 @@ export const data = flyers.data.map((flyer) => {
     retailer_name: retailer?.name,
   };
 });
+
+export const filters = [
+  {
+    name: 'Category',
+    isOpen: false,
+    filters: categories.data,
+  },
+  {
+    name: 'Retailer',
+    isOpen: false,
+    filters: retailers.data,
+  },
+  {
+    name: 'Exp. date',
+    isOpen: false,
+    filters: [],
+  },
+];

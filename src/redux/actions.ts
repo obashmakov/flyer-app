@@ -1,6 +1,7 @@
 import {
   FILTER_FLYERS,
   GET_SEARCH_RESULT,
+  OPEN_FILTER,
   REMOVE_FILTER,
   SEARCH_FLYERS,
 } from 'redux/types';
@@ -29,4 +30,11 @@ export function getSearchResult(text: string) {
 
 export function removeFilters() {
   return { type: REMOVE_FILTER };
+}
+
+export function openFilter(name: string) {
+  return {
+    type: OPEN_FILTER,
+    payload: name,
+  };
 }

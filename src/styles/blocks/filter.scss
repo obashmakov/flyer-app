@@ -1,0 +1,52 @@
+@import 'styles/common/variables';
+@import 'styles/common/mixins';
+
+.filters {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.filter {
+  position: relative;
+  margin-right: 10px;
+  @include flex-row-center;
+  border-radius: $main-border-radius;
+  box-shadow: 0 2px 7px $disabled-icon-color;
+  
+  &__button {
+    width: 100px;
+    height: 50px;
+  }
+  
+  &__icon {
+    margin-left: 10px;
+    color: $disabled-icon-color;
+  }
+}
+
+.options {
+  width: 300%;
+  position: absolute;
+  z-index: 10;
+  top: 50px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: $main-border-radius;
+  box-shadow: 0 2px 7px $disabled-icon-color;
+
+  &__option {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border-bottom: 1px solid rgb(212, 212, 212);
+  }
+
+  &__input {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+}
