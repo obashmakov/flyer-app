@@ -1,4 +1,5 @@
 @import 'styles/common/variables';
+@import 'styles/common/mixins';
 
 .flyers {
   display: grid;
@@ -34,9 +35,7 @@
   &__category {
     width: 260px;
     margin-bottom: 8px;
-    text-overflow: ellipsis;
-    overflow: hidden; 
-    white-space: nowrap;
+    @include cutted-text;
 
     @media (max-width: $tablet-width) {
       width: 180px;

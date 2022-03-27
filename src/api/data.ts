@@ -24,9 +24,9 @@ export const filters = [
     isOpen: false,
     filters: retailers.data,
   },
-  {
-    name: 'Exp. date',
-    isOpen: false,
-    filters: [],
-  },
+  // {
+  //   name: 'Exp. date',
+  //   isOpen: false,
+  //   filters: [],
+  // },
 ];

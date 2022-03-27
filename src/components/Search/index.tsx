@@ -50,7 +50,7 @@ function Search(): JSX.Element {
             onChange={handleChange}
             value={input}
           />
-          {input && <ClearButton setInput={setInput} />}
+          {input && <ClearButton setInput={setInput} setAreResultsOpen={setAreResultsOpen} />}
         </label>
       </form>
       {areResultsOpen && (

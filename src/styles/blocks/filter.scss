@@ -10,18 +10,34 @@
 .filter {
   position: relative;
   margin-right: 10px;
-  @include flex-row-center;
   border-radius: $main-border-radius;
   box-shadow: 0 2px 7px $disabled-icon-color;
-  
-  &__button {
+
+  &__container {
     width: 100px;
     height: 50px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__openButton {
+    position: absolute;
+    padding: 20px 10px 20px 80px;
+  }
+
+  &__name {
+    max-width: 60px;
+    margin-left: 10px;
+    font-size: 0.875rem;
+    @include cutted-text;
   }
   
   &__icon {
-    margin-left: 10px;
     color: $disabled-icon-color;
+  }
+
+  &:last-child {
+    margin-right: 0;
   }
 }
 
@@ -43,6 +59,7 @@
     align-items: center;
     padding-left: 10px;
     border-bottom: 1px solid rgb(212, 212, 212);
+    cursor: pointer;
   }
 
   &__input {

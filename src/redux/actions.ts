@@ -2,15 +2,17 @@ import {
   FILTER_FLYERS,
   GET_SEARCH_RESULT,
   OPEN_FILTER,
+  SELECT_FILTERS,
   REMOVE_FILTER,
   SEARCH_FLYERS,
 } from 'redux/types';
-import { FlyerProps } from 'types/reducers.interface';
 
-export function filterFlyers(flyers: FlyerProps[], id: number) {
+import { SelectedFiltersProps } from 'types/reducers.interface';
+
+export function filterFlyers(filters: SelectedFiltersProps[]) {
   return {
     type: FILTER_FLYERS,
-    payload: flyers.filter((flyer) => flyer.category_id === id),
+    payload: filters,
   };
 }
 
@@ -28,13 +30,23 @@ export function getSearchResult(text: string) {
   };
 }
 
-export function removeFilters() {
-  return { type: REMOVE_FILTER };
+export function removeFilters(type: string) {
+  return {
+    type: REMOVE_FILTER,
+    payload: type,
+  };
 }
 
 export function openFilter(name: string) {
   return {
     type: OPEN_FILTER,
     payload: name,
+  };
+}
+
+export function selectFilters(filters: any) {
+  return {
+    type: SELECT_FILTERS,
+    payload: filters,
   };
 }

@@ -1,13 +1,15 @@
 import { filters } from 'api/data';
-import { OPEN_FILTER } from 'redux/types';
+import { OPEN_FILTER, SELECT_FILTERS } from 'redux/types';
 import { ActionProps, FilterProps } from 'types/reducers.interface';
 
 interface FiltersProps {
   filters: FilterProps[],
+  selectedFilters: [],
 }
 
 const initialState: FiltersProps = {
   filters,
+  selectedFilters: [],
 };
 
 export const filtersReducer = (state = initialState, action: ActionProps) => {
@@ -16,8 +18,7 @@ export const filtersReducer = (state = initialState, action: ActionProps) => {
       return {
         ...state,
         filters: state.filters.map((filter) => {
-          // @ts-ignore
-          if (filter.name === action.payload) {
+          if (filter.name === String(action.payload)) {
             return {
               ...filter,
               isOpen: !filter.isOpen,
@@ -29,6 +30,12 @@ export const filtersReducer = (state = initialState, action: ActionProps) => {
             isOpen: false,
           };
         }),
+      };
+
+    case SELECT_FILTERS:
+      return {
+        ...state,
+        selectedFilters: action.payload,
       };
 
     default: return state;
