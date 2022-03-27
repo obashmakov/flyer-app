@@ -20,7 +20,23 @@ const initialState: FlyersProps = {
 export const flyersReducer = (state = initialState, action: ActionProps) => {
   switch (action.type) {
     case FILTER_FLYERS:
-      return { ...state, data: action.payload };
+      return {
+        ...state,
+        data: initialState.data.filter(
+          (flyer) => {
+            if (action.payload.length) {
+              const isFilterSelected = action.payload.some(
+                // @ts-ignore
+                (item) => item.id === flyer[item.filterType],
+              );
+              // @ts-ignore
+              return isFilterSelected;
+            }
+
+            return flyer;
+          },
+        ),
+      };
 
     case SEARCH_FLYERS:
       return { ...state, search: action.payload };
@@ -29,8 +45,7 @@ export const flyersReducer = (state = initialState, action: ActionProps) => {
       return {
         ...state,
         data: state.data.filter(
-          // @ts-ignore
-          (flyer) => flyer.title === action.payload,
+          (flyer) => flyer.title === String(action.payload),
         ),
       };
 

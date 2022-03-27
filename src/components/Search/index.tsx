@@ -46,10 +46,11 @@ function Search(): JSX.Element {
             className="search__input"
             id="search"
             type="text"
+            placeholder="Search a Flyer"
             onChange={handleChange}
             value={input}
           />
-          {input && <ClearButton setInput={setInput} />}
+          {input && <ClearButton setInput={setInput} setAreResultsOpen={setAreResultsOpen} />}
         </label>
       </form>
       {areResultsOpen && (
