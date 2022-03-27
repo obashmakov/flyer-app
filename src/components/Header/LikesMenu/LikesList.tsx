@@ -12,7 +12,6 @@ function LikesList(): JSX.Element {
       window.localStorage.getItem('likedFlyers') || '[]',
     );
 
-    // @ts-ignore
     setLikesList(flyersFromLocalStorage);
   }, []);
 
@@ -22,8 +21,10 @@ function LikesList(): JSX.Element {
     <ul className="likesList">
       {likesList.map((like: LikesProps) => (
         <li className="likesList__item" key={like.id}>
-          <i className="fa-solid fa-heart likesList__icon" />
-          <p className="likesList__title">{like.title}</p>
+          <button className="likesList__button">
+            <i className="fa-solid fa-heart likesList__icon" />
+            <p className="likesList__title">{like.title}</p>
+          </button>
         </li>
       ))}
     </ul>

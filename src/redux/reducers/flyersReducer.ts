@@ -29,7 +29,7 @@ export const flyersReducer = (state = initialState, action: ActionProps) => {
                 // @ts-ignore
                 (item) => item.id === flyer[item.filterType],
               );
-              // @ts-ignore
+
               return isFilterSelected;
             }
 
