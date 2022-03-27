@@ -17,12 +17,13 @@ export default function Image(
       setSrc(propsSrc);
     }
     if (!propsSrc) {
-      setSrc('/images/no-image.svg');
+      setSrc('/flyer-app/images/no-image.svg');
     }
-  }, [propsSrc, src]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [propsSrc]);
 
   const onError = () => {
-    if (props.src) setSrc('/images/no-image.svg');
+    if (props.src) setSrc('/flyer-app/images/no-image.svg');
   };
 
   return (
