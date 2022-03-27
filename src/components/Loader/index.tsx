@@ -6,7 +6,7 @@ export default function Loader(): JSX.Element {
   return (
     <Image
       className="loader"
-      src="/images/loading.svg"
+      src="/flyer-app/images/loading.svg"
       alt="loader"
     />
   );
