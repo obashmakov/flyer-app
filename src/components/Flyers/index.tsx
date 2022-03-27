@@ -5,7 +5,12 @@ import Loader from 'components/Loader';
 
 import { FlyerProps } from 'types/reducers.interface';
 import { AppProps } from 'types/app.interface';
-import { hideLoader, showError, showLoader } from 'redux/actions';
+import {
+  hideLoader,
+  showEmptyState,
+  showError,
+  showLoader,
+} from 'redux/actions';
 
 interface StateProps { flyers: { data: FlyerProps[] } }
 
@@ -19,6 +24,10 @@ function Flyers(): JSX.Element {
       dispatch(showError());
     }
 
+    if (!flyers.length) {
+      dispatch(showEmptyState());
+    }
+
     dispatch(showLoader());
     setTimeout(() => {
       dispatch(hideLoader());
@@ -29,6 +38,14 @@ function Flyers(): JSX.Element {
     return (
       <div className="loaderContainer">
         <Loader />
+      </div>
+    );
+  }
+
+  if (app.empty) {
+    return (
+      <div className="loaderContainer">
+        <h3>No Flyers founded</h3>
       </div>
     );
   }

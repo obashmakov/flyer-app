@@ -8,6 +8,7 @@ import {
   SHOW_LOADER,
   HIDE_LOADER,
   SHOW_ERROR,
+  SHOW_EMPTY_STATE,
 } from 'redux/types';
 
 import { SelectedFiltersProps } from 'types/reducers.interface';
@@ -64,4 +65,8 @@ export function hideLoader() {
 
 export function showError() {
   return { type: SHOW_ERROR };
+}
+
+export function showEmptyState() {
+  return { type: SHOW_EMPTY_STATE };
 }

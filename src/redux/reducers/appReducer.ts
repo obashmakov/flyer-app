@@ -1,9 +1,15 @@
-import { HIDE_LOADER, SHOW_LOADER, SHOW_ERROR } from 'redux/types';
+import {
+  HIDE_LOADER,
+  SHOW_LOADER,
+  SHOW_ERROR,
+  SHOW_EMPTY_STATE,
+} from 'redux/types';
 import { ActionProps } from 'types/reducers.interface';
 
 const initialState = {
   loading: false,
   error: false,
+  empty: false,
 };
 
 export const appReducer = (state = initialState, action: ActionProps) => {
@@ -24,6 +30,12 @@ export const appReducer = (state = initialState, action: ActionProps) => {
       return {
         ...state,
         error: true,
+      };
+
+    case SHOW_EMPTY_STATE:
+      return {
+        ...state,
+        empty: true,
       };
 
     default: return state;
