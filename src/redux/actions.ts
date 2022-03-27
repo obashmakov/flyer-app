@@ -5,6 +5,8 @@ import {
   SELECT_FILTERS,
   REMOVE_FILTER,
   SEARCH_FLYERS,
+  SHOW_LOADER,
+  HIDE_LOADER,
 } from 'redux/types';
 
 import { SelectedFiltersProps } from 'types/reducers.interface';
@@ -49,4 +51,12 @@ export function selectFilters(filters: any) {
     type: SELECT_FILTERS,
     payload: filters,
   };
+}
+
+export function showLoader() {
+  return { type: SHOW_LOADER };
+}
+
+export function hideLoader() {
+  return { type: HIDE_LOADER };
 }
