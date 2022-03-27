@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/flyer-app/static/css/main.db7e03fe.css",
+    "main.css": "/flyer-app/static/css/main.113c13fe.css",
     "main.js": "/flyer-app/static/js/main.100d681b.js",
     "static/media/Roboto-Medium.ttf": "/flyer-app/static/media/Roboto-Medium.7429a63c09f79a1760b0.ttf",
     "static/media/Roboto-Regular.ttf": "/flyer-app/static/media/Roboto-Regular.a8d6ac03c7b96b7acb62.ttf",
     "static/media/Roboto-Black.ttf": "/flyer-app/static/media/Roboto-Black.2a4285847db4a9acb97f.ttf",
     "static/media/Roboto-Bold.ttf": "/flyer-app/static/media/Roboto-Bold.75371f53f06181df75f1.ttf",
     "index.html": "/flyer-app/index.html",
-    "main.db7e03fe.css.map": "/flyer-app/static/css/main.db7e03fe.css.map",
+    "main.113c13fe.css.map": "/flyer-app/static/css/main.113c13fe.css.map",
     "main.100d681b.js.map": "/flyer-app/static/js/main.100d681b.js.map"
   },
   "entrypoints": [
-    "static/css/main.db7e03fe.css",
+    "static/css/main.113c13fe.css",
     "static/js/main.100d681b.js"
   ]
 }
