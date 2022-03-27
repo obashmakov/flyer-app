@@ -7,6 +7,7 @@ import {
   SEARCH_FLYERS,
   SHOW_LOADER,
   HIDE_LOADER,
+  SHOW_ERROR,
 } from 'redux/types';
 
 import { SelectedFiltersProps } from 'types/reducers.interface';
@@ -59,4 +60,8 @@ export function showLoader() {
 
 export function hideLoader() {
   return { type: HIDE_LOADER };
+}
+
+export function showError() {
+  return { type: SHOW_ERROR };
 }

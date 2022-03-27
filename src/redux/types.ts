@@ -8,3 +8,4 @@ export const SELECT_FILTERS = 'FILTERS/SELECT_FILTERS';
 
 export const SHOW_LOADER = 'APP/SHOW_LOADER';
 export const HIDE_LOADER = 'APP/HIDE_LOADER';
+export const SHOW_ERROR = 'APP/SHOW_ERROR';
