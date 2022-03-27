@@ -1,6 +1,6 @@
 # Flyer App
 
-- [DEMO LINK]()
+- [DEMO LINK](https://obashmakov.github.io/flyer-app/)
 
 This project was created using React(Hooks), Redux, HTML/CSS, BEM. Adapted for desktop and mobile devices. 
 
