@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import { useDispatch } from 'react-redux';
 import { openFilter, selectFilters } from 'redux/actions';
 import Checkbox from 'components/Inputs/Checkbox';
@@ -21,7 +22,6 @@ function Filter({
       <div className="filter__container">
         <p className="filter__name">
           {selectedFilters?.length ? (
-            // @ts-ignore
             selectedFilters.map((filter) => filter.name)
           ) : name}
         </p>
@@ -35,7 +35,12 @@ function Filter({
       </div>
 
       {isOpen && (
-        <div className="options">
+        <div
+          className={cx({
+            options: true,
+            'options--retailer': name === 'Retailer',
+          })}
+        >
           {filters.map((filter) => (
             <Checkbox
               key={filter.id}

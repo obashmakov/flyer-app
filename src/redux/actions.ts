@@ -50,7 +50,7 @@ export function openFilter(name: string) {
   };
 }
 
-export function selectFilters(filters: any) {
+export function selectFilters(filters: SelectedFiltersProps[]) {
   return {
     type: SELECT_FILTERS,
     payload: filters,

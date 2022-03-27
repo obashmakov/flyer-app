@@ -53,6 +53,10 @@
   border-radius: $main-border-radius;
   box-shadow: 0 2px 7px $disabled-icon-color;
 
+  &--retailer {
+    left: -110px;
+  }
+
   &__option {
     height: 40px;
     display: flex;
