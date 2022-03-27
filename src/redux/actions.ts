@@ -9,9 +9,11 @@ import {
   HIDE_LOADER,
   SHOW_ERROR,
   SHOW_EMPTY_STATE,
+  ADD_LIKED_FLYER,
+  REMOVE_LIKED_FLYER,
 } from 'redux/types';
 
-import { SelectedFiltersProps } from 'types/reducers.interface';
+import { LikeButtonProps, SelectedFiltersProps } from 'types/reducers.interface';
 
 export function filterFlyers(filters: SelectedFiltersProps[]) {
   return {
@@ -69,4 +71,18 @@ export function showError() {
 
 export function showEmptyState() {
   return { type: SHOW_EMPTY_STATE };
+}
+
+export function addLikedFlyer(flyer: LikeButtonProps[]) {
+  return {
+    type: ADD_LIKED_FLYER,
+    payload: flyer,
+  };
+}
+
+export function removeLikedFlyer(flyer: LikeButtonProps[]) {
+  return {
+    type: REMOVE_LIKED_FLYER,
+    payload: flyer,
+  };
 }

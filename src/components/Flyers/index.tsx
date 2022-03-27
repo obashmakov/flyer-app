@@ -31,7 +31,7 @@ function Flyers(): JSX.Element {
     dispatch(showLoader());
     setTimeout(() => {
       dispatch(hideLoader());
-    }, 1000);
+    }, 500);
   }, [dispatch, flyers]);
 
   if (app.loading) {

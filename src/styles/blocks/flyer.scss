@@ -93,5 +93,9 @@
 
   &__heartIcon {
     font-size: 1.375rem;
+
+    &--liked {
+      color: $project-color;
+    }
   }
 }
