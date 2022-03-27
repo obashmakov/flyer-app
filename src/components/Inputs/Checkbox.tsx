@@ -22,8 +22,12 @@ function Checkbox({
     );
 
     if (!isFilterSelected) {
-      dispatch(action([...selectedFilters, { id: Number(id), name, filterType: `${filterType}_id` }]));
-      dispatch(filterFlyers([...selectedFilters, { id: Number(id), name, filterType: `${filterType}_id` }]));
+      dispatch(action(
+        [...selectedFilters, { id: Number(id), name, filterType: `${filterType}_id` }],
+      ));
+      dispatch(filterFlyers(
+        [...selectedFilters, { id: Number(id), name, filterType: `${filterType}_id` }],
+      ));
     } else {
       const filters = selectedFilters.filter(
         (filter) => !(filter.filterType === `${filterType}_id` && filter.id === Number(id)),

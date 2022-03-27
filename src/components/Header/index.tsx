@@ -14,7 +14,7 @@ function Header(): JSX.Element {
       </button>
       <p className="header__title">ShopFully</p>
       {isModalOpen && (
-        <Modal width="300px" height="100vh" setIsModalOpen={setIsModalOpen}>
+        <Modal width="280px" height="100vh" setIsModalOpen={setIsModalOpen}>
           <LikesMenu />
         </Modal>
       )}
