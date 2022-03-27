@@ -1,0 +1,68 @@
+@import 'styles/common/variables';
+
+.likesHead {
+  color: black;
+  border-bottom: 1px solid rgb(212, 212, 212);
+
+  &__logo {
+    width: 100%;
+  }
+
+  &__title,
+  &__info {
+    margin-left: 20px;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  &__info {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+}
+
+.likesList {
+  color: black;
+
+  &__item {
+    position: relative;
+    height: 40px;
+    margin: 10px 5px;
+    display: flex;
+    align-items: center;
+    border-radius: $main-border-radius;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $project-color-hover;
+      color: $project-color;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    width: 100%;
+    padding: 10px 0;
+    margin-left: 10px;
+    color: $disabled-icon-color;
+
+    &:hover {
+      color: $project-color;
+    }
+  }
+
+  &__title {
+    font-size: 1rem;
+    margin-left: 60px;
+  }
+}
+
+.noFlyers {
+  color: black;
+  font-size: 1rem;
+  margin-left: 20px;
+  margin-top: 20px;
+}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'components/Modal';
 
 import 'styles/blocks/header.scss';
+import LikesMenu from './LikesMenu';
 
 function Header(): JSX.Element {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -13,7 +14,9 @@ function Header(): JSX.Element {
       </button>
       <p className="header__title">ShopFully</p>
       {isModalOpen && (
-        <Modal width="300px" height="100vh" setIsModalOpen={setIsModalOpen} />
+        <Modal width="300px" height="100vh" setIsModalOpen={setIsModalOpen}>
+          <LikesMenu />
+        </Modal>
       )}
     </header>
   );

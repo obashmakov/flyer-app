@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import cx from 'classnames';
 
-import { FlyerProps, LikeButtonProps } from 'types/reducers.interface';
+import { LikeButtonProps } from 'types/reducers.interface';
+import { addLikedFlyer, removeLikedFlyer } from 'redux/actions';
 
 function LikeButton({ id, title }: LikeButtonProps): JSX.Element {
+  const dispatch = useDispatch();
   const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
-    const flyersFromLocalStorage: FlyerProps[] = JSON.parse(
+    const flyersFromLocalStorage: LikeButtonProps[] = JSON.parse(
       window.localStorage.getItem('likedFlyers') || '[]',
     );
     const isFlyerInLocalStorage = flyersFromLocalStorage.some(
@@ -19,7 +22,7 @@ function LikeButton({ id, title }: LikeButtonProps): JSX.Element {
 
   const handleClick = () => {
     setIsLiked(!isLiked);
-    const flyersFromLocalStorage: FlyerProps[] = JSON.parse(
+    const flyersFromLocalStorage: LikeButtonProps[] = JSON.parse(
       window.localStorage.getItem('likedFlyers') || '[]',
     );
     const isFlyerInLocalStorage = flyersFromLocalStorage.some(
@@ -35,11 +38,15 @@ function LikeButton({ id, title }: LikeButtonProps): JSX.Element {
         'likedFlyers',
         JSON.stringify(filteredFlyers),
       );
+
+      dispatch(removeLikedFlyer(filteredFlyers));
     } else {
       window.localStorage.setItem(
         'likedFlyers',
         JSON.stringify([...flyersFromLocalStorage, { id, title }]),
       );
+
+      dispatch(addLikedFlyer([...flyersFromLocalStorage, { id, title }]));
     }
   };
 

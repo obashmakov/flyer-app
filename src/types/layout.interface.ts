@@ -7,6 +7,6 @@ export interface LayoutProps {
 export interface ModalProps {
   width: string;
   height: string;
-  children?: React.ReactNode;
+  children: React.ReactNode;
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 }
