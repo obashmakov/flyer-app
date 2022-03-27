@@ -53,6 +53,10 @@
   border-radius: $main-border-radius;
   box-shadow: 0 2px 7px $disabled-icon-color;
 
+  @media (max-width: $mobile-width) {
+    width: 210%;
+  }
+
   &--retailer {
     left: -110px;
   }
