@@ -1,3 +1,5 @@
+@import 'styles/common/fonts';
+
 *,
 ::after,
 ::before {
@@ -6,5 +8,10 @@
 
 html,
 body {
+  font-family: 'Roboto', 'sans-serif';
   scroll-behavior: smooth;
+}
+
+input {
+  font-family: 'Roboto', 'sans-serif';
 }

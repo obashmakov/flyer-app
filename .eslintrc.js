@@ -40,7 +40,7 @@ module.exports = {
     'import/prefer-default-export': 0,
     // Forbid the use of extraneous packages
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
-    'import/no-extraneous-dependencies': ['error', { packageDir: '.' }],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
 
     // Recommend not to leave any console.log in your code
     // Use console.error, console.warn and console.info instead
@@ -117,6 +117,8 @@ module.exports = {
     quotes: ['error', 'single', { avoidEscape: true }],
 
     'arrow-body-style': ['error', 'as-needed'],
+    'default-param-last': 'off',
+    '@typescript-eslint/default-param-last': ['off'],
   },
   settings: {
     'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],

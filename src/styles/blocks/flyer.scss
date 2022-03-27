@@ -1,0 +1,101 @@
+@import 'styles/common/variables';
+@import 'styles/common/mixins';
+
+.flyers {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 300px);
+  column-gap: 20px;
+
+  @media (max-width: $tablet-width) {
+    grid-template-columns: repeat(auto-fill, 220px);
+    column-gap: 10px;
+  }
+
+  @media (max-width: $mobile-width) {
+    grid-template-columns: repeat(1, 300px);
+    column-gap: 10px;
+  }
+}
+
+.flyer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  border-radius: $main-border-radius;
+  overflow: hidden;
+  box-shadow: 0 2px 5px $disabled-icon-color;
+
+  @media (max-width: $tablet-width) {
+    margin-top: 10px;
+  }
+
+  &__retailer,
+  &__title,
+  &__category {
+    width: 260px;
+    margin-bottom: 8px;
+    @include cutted-text;
+
+    @media (max-width: $tablet-width) {
+      width: 180px;
+    }
+  }
+
+  &__retailer {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+  }
+
+  &__title {
+    font-size: $secondary-title-size;
+
+    @media (max-width: $tablet-width) {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__category {
+    font-size: 1.125rem;
+    color: $disabled-icon-color;
+  }
+
+  &__image {
+    height: 280px;
+    object-fit: cover;
+    object-position: top;
+
+    @media (max-width: $tablet-width) {
+      height: 200px;
+    }
+  }
+
+  &__info {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  &__button {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: $disabled-icon-color;
+    transition: $main-transition;
+
+    &:hover {
+      color: $project-color;
+      transition: $main-transition;
+    }
+  }
+
+  &__heartIcon {
+    font-size: 1.375rem;
+
+    &--liked {
+      color: $project-color;
+    }
+  }
+}
